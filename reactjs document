@@ -1,8 +1,22 @@
-recatjs
-this.state
-setstate
-this.props
-render(
 
-)
 all boilerplate link:https://github.com/xgrommx/awesome-redux#boilerplate
+these code reactjs enjob
+// self-create private with resual very good !!!
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      fakeAuth.isAuthenticated ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/login",
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
+ <PrivateRoute path="/protected" component={Protected} />
