@@ -1,0 +1,75 @@
+ 
+ render() {
+        const {children, history, windowTitle} = this.props;
+// handing Link very enjob
+        const renderNavItem = (label, location) => (
+            <li className="nav-item">
+                {/* Add "active" class when you're on that page" */}
+                <Link
+                    className={classnames("nav-link", {active: location == history.location.pathname})}
+                    to={location}
+                >
+                    {label}
+                </Link>
+            </li>
+        );
+        const renderNavItem=(label,location)=>{
+            <li class="nav-item" >
+                        <Link className={classNames('nav-link',{active:location==history.location.pathname})}>
+
+                        </Link>
+            </li>
+        }
+
+        let user = userInfo.getUser();
+        return (
+            <Fragment>
+
+                <WindowTitle title={windowTitle == null ? "Conduit" : `${windowTitle} — Conduit`}/>
+
+                <nav className="navbar navbar-light">
+                    <div className="container">
+                        <Link className="navbar-brand" to="/">conduit</Link>
+                        <ul className="nav navbar-nav pull-xs-right">
+                            {
+                            renderNavItem("Home", "/")}
+
+                            {user == null ? (
+                                <Fragment>
+                                    {renderNavItem("Sign in", "/login")}
+                                    {renderNavItem("Sign up", "/register")}
+                                </Fragment>
+                            ) : (
+                                <Fragment>
+                                    {renderNavItem((
+                                        <Fragment>
+                                            <i className="ion-compose"/>&nbsp;New Article
+                                        </Fragment>
+                                    ), "/editor")}
+
+                                    {renderNavItem((
+                                        <Fragment>
+                                            <i className="ion-gear-a"/>&nbsp;Settings
+                                        </Fragment>
+                                    ), "/settings")}
+
+                                    {renderNavItem((user.username), `/@${user.username}`)}
+                                </Fragment>
+                            )}
+                        </ul>
+                    </div>
+                </nav>
+
+                {children}
+
+                {/*<footer>*/}
+                    {/*<div className="container">*/}
+                        {/*<a href="/" className="logo-font">conduit</a>*/}
+                        {/*<span className="attribution">*/}
+                            {/*An interactive learning project from <a href="https://thinkster.io">Thinkster</a>. Code &amp; design licensed under MIT.*/}
+                        {/*</span>*/}
+                    {/*</div>*/}
+                {/*</footer>*/}
+            </Fragment>
+        );
+    }
