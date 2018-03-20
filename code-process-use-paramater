@@ -1,0 +1,10 @@
+const bind = (statePath) => ({
+            value: this.state[statePath] == null ? "" : this.state[statePath],
+            onChange: (e) => this.setState({[statePath]: e.target.value}),
+        });
+        // function bind return one object and object have 2 (key value)
+  and now . we will use it as follows 
+  <input    {...bind("email")}/>
+  //code above will the samme code below
+  <input       value: this.state[statePath] == null ? "" : this.state[statePath]    onChange: (e) => this.setState({[statePath]: e.target.value}) />
+  // wow it amazing
