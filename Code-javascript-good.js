@@ -70,3 +70,12 @@ render
 }
      </ul>
 )
+// code goond in javascript
+const len = items.length;
+const itemsCopy = [];
+let i;
+for (i = 0; i < len; i++) {
+itemsCopy[i] = items[i];
+}
+// Tốt
+const itemsCopy = [...items];
