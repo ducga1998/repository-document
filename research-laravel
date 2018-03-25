@@ -1,2 +1,18 @@
 https://github.com/laravel/framework/blob/5.3/src/Illuminate/Routing/Router.php
 Link về class Auth : ))). đọc code thấy quá kinh
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+link đến logout x
+// make button logout
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
