@@ -16,3 +16,19 @@ link đến logout x
                                         </form>
                                     </li>
                                 </ul>
+                how to use route laravel in file javscript ???
+            follow below code
+       tip 1:
+       $(".waitingTime .button").click(function () {
+        window.location.href = "{{URL::to('restaurants/20')}}"
+      });
+      tip2:
+      <div class="waitingTime">
+     <button class="button link-button" data-href="{{URL::to('restaurants/20')}}">
+      Click me
+      </button>
+    </div>
+
+      $(".link-button").click(function () {
+        window.location.href = $(this).data('href');
+      });
