@@ -79,3 +79,8 @@ itemsCopy[i] = items[i];
 }
 // Tốt
 const itemsCopy = [...items];
+//example we have object in javacsript  { object,object,object}   how to we handle each oject item ??
+// we use before
+for(item in listItem){
+  FunctionHandleEachItem(listItem[item]);
+}
