@@ -38,3 +38,10 @@ link đến logout x
         $giangvien=  $giangvien->LayToanBoSinhVienTrongLopGiangVienDay->toArray();
 LayToanBoSinhVienTrongLopGiangVienDay() // là hàm có return $this-> belongTomany() ;
 
+// các thể loại category ORM in laravvel
+ sinhvien::all(); lấy tất cả
+hoặc
+$sinhvien=new sinhvien;
+$sinhvien->all();
+$sinhvien->where("id",??)->first();
+có thể convert thêm bằng cách dùng toArray() hoặc toJson();
