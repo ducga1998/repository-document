@@ -32,3 +32,9 @@ link đến logout x
       $(".link-button").click(function () {
         window.location.href = $(this).data('href');
       });
+// rất dễ bị bug khi code rel ORM
+     $giangvien= giangvien::find(3);// đối số trong find nó là primaryKey trong model giang vien. mình phải config cho nó trường dữ liệu 
+// mình cần get 
+        $giangvien=  $giangvien->LayToanBoSinhVienTrongLopGiangVienDay->toArray();
+LayToanBoSinhVienTrongLopGiangVienDay() // là hàm có return $this-> belongTomany() ;
+
