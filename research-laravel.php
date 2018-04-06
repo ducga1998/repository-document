@@ -45,3 +45,11 @@ $sinhvien=new sinhvien;
 $sinhvien->all();
 $sinhvien->where("id",??)->first();
 có thể convert thêm bằng cách dùng toArray() hoặc toJson();
+
+ORM laravel
+ ->get() // lấy toàn bộ collection
+ ->first() // lần phần tử đầu của colllection
+ muốn convert collection thành mảng thì phải dùng get , hoặc first() để đưa khi sử dụng where("??")
+ còn khi sử dụng find($primarykey) thì không còn sử dụng nhưng nhớ $primaryket đối số trong hàm find nó đc set theo $primarykey trong model mình dã
+set. Nếu trong model ko set thì default của nó sẽ là trường Id..... Rất hay bị bug chỗ này. cần cẩn thận config nó trước khi code
+
