@@ -96,3 +96,9 @@ function formatDate(date) {
 
   return [year, month, day].join("-");
 }
+//compare date in javascript
+ var updated_at = new Date(object.updated_at);
+   var deadline = new Date(object.deadline);
+   var ButtonHTML="";
+   //flag =false=> vướt quá deadline
+   var flag = updated_at.getTime() <= deadline.getTime();
