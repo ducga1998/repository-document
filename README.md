@@ -6,6 +6,13 @@ First name lesson đâu tiên xem nào
 var a = 42;
 typeof a; // "number"
 a = true;
-typeof a; // "boolean"
+typeof a; // "boolean" 
 ```
+Sử dụng undefine để xóa vùng cấp 
+```
+var a=2;
+var b; // b undefine
+a=b; // a also undefine for b 
+```
+
 
