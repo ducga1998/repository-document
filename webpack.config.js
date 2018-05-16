@@ -28,3 +28,13 @@ module.exports = {
    extensions: ['', '.js', '.es6']
  }
 }
+#các  pluin opzime trong webpack
+const prodPlugins = [
+  new webpack.DefinePlugin({
+   'process.env.NODE_ENV': '"production"'
+  }),
+  new webpack.optimize.UglifyJsPlugin(),
+  new webpack.optimize.AggressiveMergingPlugin(),
+  new webpack.optimize.ModuleConcatenationPlugin(),
+  new webpack.NoErrorsPlugin(),
+];
