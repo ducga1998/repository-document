@@ -10,9 +10,14 @@ class A {
   }
   static B(){
     console.log("call B t0 class static")
+    console.log(this); /// a here . it will log class
   }
   B(){
     console.log("function to instance class ")
+    console.log(this) // a here . It will log undefine
   }
 }
+ const instance  = new A();
+A.B(); // log "call B t0 class static" and class ..
+instance.B(); // log function to instance class and undefine 
 
