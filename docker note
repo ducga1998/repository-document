@@ -1,0 +1,4 @@
+# docker-compose manager docker and  maintain docker run stable 
+# ls -l 
+# pwd| pbc copy => copy duong dan  ( cat duc.text | pbcopy )
+mkdir -f duc/chun => create dir to link 
